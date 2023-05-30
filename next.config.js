@@ -1,11 +1,31 @@
+// const withNextra = require("nextra")({
+//   theme: "nextra-theme-docs",
+//   themeConfig: "./theme.config.tsx",
+// });
+
+// module.exports = {
+//   ...withNextra(),
+//   images: {
+//     unoptimized: true,
+//   },
+// };
+
+/** @type {import('next').NextConfig} */
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
 });
 
-module.exports = {
-  ...withNextra(),
+const nextConfig = {
   images: {
     unoptimized: true,
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  trailingSlash: true,
+};
+
+module.exports = {
+  ...withNextra(),
+  ...nextConfig,
 };

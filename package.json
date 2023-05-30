@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export && touch out/.nojekyll",
+    "lint": "next lint --max-warnings=0",
+    "type-check": "tsc",
+    "deploy": "gh-pages -d out -t true",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
